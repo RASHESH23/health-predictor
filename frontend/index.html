@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="description" content="AI-powered diabetes risk assessment tool. Get instant health insights based on clinical indicators.">
+    <meta name="keywords" content="diabetes, health assessment, AI, risk prediction">
+    <meta name="author" content="HealthPredictor">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="HealthPredictor - AI Diabetes Risk Assessment">
+    <meta property="og:description" content="Know your diabetes risk in minutes with our AI-powered health assessment tool.">
+    <meta property="og:type" content="website">
+    
+    <title>HealthPredictor | AI Diabetes Risk Assessment</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💗</text></svg>">
+</head>
+
+<body>
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ========================= -->
+    <!-- ANIMATED MESH BACKGROUND -->
+    <!-- ========================= -->
+    <div class="bg-mesh" aria-hidden="true">
+        <div class="mesh-gradient mesh-1"></div>
+        <div class="mesh-gradient mesh-2"></div>
+        <div class="mesh-gradient mesh-3"></div>
+        <div class="mesh-grid"></div>
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- NAVBAR -->
+    <!-- ========================= -->
+    <header class="navbar" role="banner">
+        <div class="nav-inner">
+            <a href="#" class="nav-brand" aria-label="HealthPredictor Home">
+                <div class="nav-logo">
+                    <i class="fas fa-heartbeat" aria-hidden="true"></i>
+                    <span class="logo-pulse"></span>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">HealthPredictor</span>
+                    <span class="brand-tag">AI Health Insights</span>
+                </div>
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="#assessment" class="nav-link active">
+                    <i class="fas fa-clipboard-list" aria-hidden="true"></i>
+                    <span>Assessment</span>
+                </a>
+                <a href="#about" class="nav-link">
+                    <i class="fas fa-circle-info" aria-hidden="true"></i>
+                    <span>About</span>
+                </a>
+            </nav>
+
+            <div class="nav-badge" role="status">
+                <span class="badge-dot"></span>
+                <i class="fas fa-shield-halved" aria-hidden="true"></i>
+                <span>AI-Powered</span>
+            </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+
+    <main id="main-content" class="container" role="main">
+
+        <!-- ========================= -->
+        <!-- HERO HEADER -->
+        <!-- ========================= -->
+        <section class="page-header" aria-labelledby="hero-title">
+
+            <div class="header-badge">
+                <span class="badge-icon">
+                    <i class="fas fa-dna" aria-hidden="true"></i>
+                </span>
+                Diabetes Risk Assessment
+            </div>
+
+            <h1 id="hero-title">
+                Know Your
+                <span class="gradient-text">Health Risk</span>
+                <span class="hero-emoji" aria-hidden="true">🩺</span>
+                Today
+            </h1>
+
+            <p class="hero-subtitle">
+                Complete the assessment below to get an AI-powered
+                estimate of your diabetes risk based on clinical indicators.
+            </p>
+
+            <div class="header-stats" role="list">
+                <div class="stat-item" role="listitem">
+                    <div class="stat-icon stat-icon-purple">
+                        <i class="fas fa-brain" aria-hidden="true"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">AI Powered</span>
+                        <span class="stat-desc">Machine learning</span>
+                    </div>
+                </div>
+                <div class="stat-divider" aria-hidden="true"></div>
+                <div class="stat-item" role="listitem">
+                    <div class="stat-icon stat-icon-green">
+                        <i class="fas fa-lock" aria-hidden="true"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Private & Secure</span>
+                        <span class="stat-desc">100% confidential</span>
+                    </div>
+                </div>
+                <div class="stat-divider" aria-hidden="true"></div>
+                <div class="stat-item" role="listitem">
+                    <div class="stat-icon stat-icon-orange">
+                        <i class="fas fa-bolt" aria-hidden="true"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Instant Results</span>
+                        <span class="stat-desc">In under 30 seconds</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- PROGRESS STEPPER -->
+        <!-- ========================= -->
+        <aside class="progress-container" id="assessment" aria-label="Form progress">
+            <div class="progress-header">
+                <div class="progress-info">
+                    <span class="progress-label">
+                        <i class="fas fa-list-check" aria-hidden="true"></i>
+                        Assessment Progress
+                    </span>
+                    <span class="progress-count" id="progressCount" aria-live="polite">
+                        <strong>0</strong> / 21 fields completed
+                    </span>
+                </div>
+                <div class="progress-percentage" id="progressPercent" aria-live="polite">0%</div>
+            </div>
+            <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="progress-fill" id="progressFill">
+                    <span class="progress-glow"></span>
+                </div>
+            </div>
+            
+            <!-- Step Indicator -->
+            <nav class="step-indicator" aria-label="Section progress">
+                <button class="step-dot active" data-step="1" aria-label="Go to Health Conditions">
+                    <span class="step-number">1</span>
+                    <span class="step-label">Health</span>
+                </button>
+                <span class="step-line"></span>
+                <button class="step-dot" data-step="2" aria-label="Go to Lifestyle">
+                    <span class="step-number">2</span>
+                    <span class="step-label">Lifestyle</span>
+                </button>
+                <span class="step-line"></span>
+                <button class="step-dot" data-step="3" aria-label="Go to Healthcare">
+                    <span class="step-number">3</span>
+                    <span class="step-label">Healthcare</span>
+                </button>
+                <span class="step-line"></span>
+                <button class="step-dot" data-step="4" aria-label="Go to General Health">
+                    <span class="step-number">4</span>
+                    <span class="step-label">Wellness</span>
+                </button>
+                <span class="step-line"></span>
+                <button class="step-dot" data-step="5" aria-label="Go to Personal Info">
+                    <span class="step-number">5</span>
+                    <span class="step-label">Personal</span>
+                </button>
+            </nav>
+        </aside>
+
+
+        <!-- ========================= -->
+        <!-- FORM -->
+        <!-- ========================= -->
+        <form id="diabetesForm" novalidate aria-label="Health assessment form">
+
+            <!-- Error Summary (Live Region) -->
+            <div class="error-summary" id="errorSummary" role="alert" aria-live="assertive" hidden>
+                <i class="fas fa-triangle-exclamation" aria-hidden="true"></i>
+                <span id="errorSummaryText"></span>
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- SECTION 1: HEALTH CONDITIONS -->
+            <!-- ========================= -->
+            <section class="form-section" data-section="1" aria-labelledby="section-1-title">
+
+                <div class="section-header">
+                    <div class="section-icon section-icon-1">
+                        <i class="fas fa-heart-pulse" aria-hidden="true"></i>
+                    </div>
+                    <div class="section-title-wrap">
+                        <span class="section-eyebrow">Section 01</span>
+                        <h2 id="section-1-title">Health Conditions</h2>
+                        <p class="section-desc">Tell us about your existing health conditions</p>
+                    </div>
+                    <div class="section-number">01</div>
+                </div>
+
+                <div class="form-grid">
+
+                    <!-- HighBP -->
+                    <div class="form-group" data-tooltip="High blood pressure increases diabetes risk significantly">
+                        <label for="HighBP">
+                            <span class="label-icon">
+                                <i class="fas fa-gauge-high" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                Do you have high blood pressure?
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="toggle-group" role="radiogroup" aria-label="High blood pressure">
+                            <input type="radio" id="HighBP-yes" name="HighBP" value="1" required>
+                            <label for="HighBP-yes" class="toggle-option">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span>Yes</span>
+                            </label>
+                            <input type="radio" id="HighBP-no" name="HighBP" value="0">
+                            <label for="HighBP-no" class="toggle-option">
+                                <i class="fas fa-xmark" aria-hidden="true"></i>
+                                <span>No</span>
+                            </label>
+                        </div>
+                        <span class="field-error" id="HighBP-error" role="alert"></span>
+                    </div>
+
+                    <!-- HighChol -->
+                    <div class="form-group" data-tooltip="High cholesterol is linked to insulin resistance">
+                        <label for="HighChol">
+                            <span class="label-icon">
+                                <i class="fas fa-droplet" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                Do you have high cholesterol?
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="toggle-group" role="radiogroup" aria-label="High cholesterol">
+                            <input type="radio" id="HighChol-yes" name="HighChol" value="1" required>
+                            <label for="HighChol-yes" class="toggle-option">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span>Yes</span>
+                            </label>
+                            <input type="radio" id="HighChol-no" name="HighChol" value="0">
+                            <label for="HighChol-no" class="toggle-option">
+                                <i class="fas fa-xmark" aria-hidden="true"></i>
+                                <span>No</span>
+                            </label>
+                        </div>
+                        <span class="field-error" id="HighChol-error" role="alert"></span>
+                    </div>
+
+                    <!-- CholCheck -->
+                    <div class="form-group" data-tooltip="Regular cholesterol checks help monitor your health">
+                        <label for="CholCheck">
+                            <span class="label-icon">
+                                <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                Cholesterol check in the last 5 years?
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="toggle-group" role="radiogroup" aria-label="Cholesterol check">
+                            <input type="radio" id="CholCheck-yes" name="CholCheck" value="1" required>
+                            <label for="CholCheck-yes" class="toggle-option">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span>Yes</span>
+                            </label>
+                            <input type="radio" id="CholCheck-no" name="CholCheck" value="0">
+                            <label for="CholCheck-no" class="toggle-option">
+                                <i class="fas fa-xmark" aria-hidden="true"></i>
+                                <span>No</span>
+                            </label>
+                        </div>
+                        <span class="field-error" id="CholCheck-error" role="alert"></span>
+                    </div>
+
+                    <!-- Stroke -->
+                    <div class="form-group" data-tooltip="Stroke history may indicate cardiovascular complications">
+                        <label for="Stroke">
+                            <span class="label-icon">
+                                <i class="fas fa-brain" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                Have you ever had a stroke?
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="toggle-group" role="radiogroup" aria-label="Stroke history">
+                            <input type="radio" id="Stroke-yes" name="Stroke" value="1" required>
+                            <label for="Stroke-yes" class="toggle-option">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span>Yes</span>
+                            </label>
+                            <input type="radio" id="Stroke-no" name="Stroke" value="0">
+                            <label for="Stroke-no" class="toggle-option">
+                                <i class="fas fa-xmark" aria-hidden="true"></i>
+                                <span>No</span>
+                            </label>
+                        </div>
+                        <span class="field-error" id="Stroke-error" role="alert"></span>
+                    </div>
+
+                    <!-- HeartDiseaseorAttack -->
+                    <div class="form-group" data-tooltip="Heart disease shares risk factors with diabetes">
+                        <label for="HeartDiseaseorAttack">
+                            <span class="label-icon">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                History of heart disease or heart attack?
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="toggle-group" role="radiogroup" aria-label="Heart disease">
+                            <input type="radio" id="HeartDiseaseorAttack-yes" name="HeartDiseaseorAttack" value="1" required>
+                            <label for="HeartDiseaseorAttack-yes" class="toggle-option">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span>Yes</span>
+                            </label>
+                            <input type="radio" id="HeartDiseaseorAttack-no" name="HeartDiseaseorAttack" value="0">
+                            <label for="HeartDiseaseorAttack-no" class="toggle-option">
+                                <i class="fas fa-xmark" aria-hidden="true"></i>
+                                <span>No</span>
+                            </label>
+                        </div>
+                        <span class="field-error" id="HeartDiseaseorAttack-error" role="alert"></span>
+                    </div>
+
+                    <!-- DiffWalk -->
+                    <div class="form-group" data-tooltip="Mobility issues can reflect metabolic conditions">
+                        <label for="DiffWalk">
+                            <span class="label-icon">
+                                <i class="fas fa-person-walking" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                Difficulty walking or climbing stairs?
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="toggle-group" role="radiogroup" aria-label="Difficulty walking">
+                            <input type="radio" id="DiffWalk-yes" name="DiffWalk" value="1" required>
+                            <label for="DiffWalk-yes" class="toggle-option">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span>Yes</span>
+                            </label>
+                            <input type="radio" id="DiffWalk-no" name="DiffWalk" value="0">
+                            <label for="DiffWalk-no" class="toggle-option">
+                                <i class="fas fa-xmark" aria-hidden="true"></i>
+                                <span>No</span>
+                            </label>
+                        </div>
+                        <span class="field-error" id="DiffWalk-error" role="alert"></span>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- ========================= -->
+            <!-- SECTION 2: BODY & LIFESTYLE -->
+            <!-- ========================= -->
+            <section class="form-section" data-section="2" aria-labelledby="section-2-title">
+
+                <div class="section-header">
+                    <div class="section-icon section-icon-2">
+                        <i class="fas fa-dumbbell" aria-hidden="true"></i>
+                    </div>
+                    <div class="section-title-wrap">
+                        <span class="section-eyebrow">Section 02</span>
+                        <h2 id="section-2-title">Body & Lifestyle</h2>
+                        <p class="section-desc">Your physical habits and body metrics</p>
+                    </div>
+                    <div class="section-number">02</div>
+                </div>
+
+                <div class="form-grid">
+
+                    <!-- BMI -->
+                    <div class="form-group form-group-full" data-tooltip="BMI between 18.5–24.9 is considered normal weight">
+                        <label for="BMI">
+                            <span class="label-icon">
+                                <i class="fas fa-weight-scale" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                BMI (Body Mass Index)
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="input-wrapper">
+                            <input
+                                type="number"
+                                id="BMI"
+                                name="BMI"
+                                min="10"
+                                max="100"
+                                step="0.1"
+                                placeholder="e.g. 27.5"
+                                required
+                                inputmode="decimal"
+                            >
+                            <span class="input-unit">kg/m²</span>
+                        </div>
+                        <div class="bmi-indicator" id="bmiIndicator" aria-live="polite">
+                            <div class="bmi-scale">
+                                <div class="bmi-segment underweight" data-range="Underweight">
+                                    <span>Underweight</span>
+                                </div>
+                                <div class="bmi-segment normal" data-range="Normal">
+                                    <span>Normal</span>
+                                </div>
+                                <div class="bmi-segment overweight" data-range="Overweight">
+                                    <span>Overweight</span>
+                                </div>
+                                <div class="bmi-segment obese" data-range="Obese">
+                                    <span>Obese</span>
+                                </div>
+                            </div>
+                            <div class="bmi-marker" id="bmiMarker"></div>
+                            <p class="bmi-label" id="bmiLabel">Enter your BMI to see category</p>
+                        </div>
+                        <span class="field-error" id="BMI-error" role="alert"></span>
+                    </div>
+
+                    <!-- Smoker -->
+                    <div class="form-group" data-tooltip="100+ cigarettes lifetime is the clinical threshold">
+                        <label for="Smoker">
+                            <span class="label-icon">
+                                <i class="fas fa-smoking" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                Smoked at least 100 cigarettes in your lifetime?
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="toggle-group" role="radiogroup" aria-label="Smoking status">
+                            <input type="radio" id="Smoker-yes" name="Smoker" value="1" required>
+                            <label for="Smoker-yes" class="toggle-option">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span>Yes</span>
+                            </label>
+                            <input type="radio" id="Smoker-no" name="Smoker" value="0">
+                            <label for="Smoker-no" class="toggle-option">
+                                <i class="fas fa-xmark" aria-hidden="true"></i>
+                                <span>No</span>
+                            </label>
+                        </div>
+                        <span class="field-error" id="Smoker-error" role="alert"></span>
+                    </div>
+
+                    <!-- PhysActivity -->
+                    <div class="form-group" data-tooltip="Any exercise other than regular job activity">
+                        <label for="PhysActivity">
+                            <span class="label-icon">
+                                <i class="fas fa-running" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                Physical activity in the past 30 days?
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="toggle-group" role="radiogroup" aria-label="Physical activity">
+                            <input type="radio" id="PhysActivity-yes" name="PhysActivity" value="1" required>
+                            <label for="PhysActivity-yes" class="toggle-option">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span>Yes</span>
+                            </label>
+                            <input type="radio" id="PhysActivity-no" name="PhysActivity" value="0">
+                            <label for="PhysActivity-no" class="toggle-option">
+                                <i class="fas fa-xmark" aria-hidden="true"></i>
+                                <span>No</span>
+                            </label>
+                        </div>
+                        <span class="field-error" id="PhysActivity-error" role="alert"></span>
+                    </div>
+
+                    <!-- Fruits -->
+                    <div class="form-group" data-tooltip="At least one serving of fruit per day">
+                        <label for="Fruits">
+                            <span class="label-icon">
+                                <i class="fas fa-apple-whole" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                Do you regularly consume fruits?
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="toggle-group" role="radiogroup" aria-label="Fruit consumption">
+                            <input type="radio" id="Fruits-yes" name="Fruits" value="1" required>
+                            <label for="Fruits-yes" class="toggle-option">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span>Yes</span>
+                            </label>
+                            <input type="radio" id="Fruits-no" name="Fruits" value="0">
+                            <label for="Fruits-no" class="toggle-option">
+                                <i class="fas fa-xmark" aria-hidden="true"></i>
+                                <span>No</span>
+                            </label>
+                        </div>
+                        <span class="field-error" id="Fruits-error" role="alert"></span>
+                    </div>
+
+                    <!-- Veggies -->
+                    <div class="form-group" data-tooltip="At least one serving of vegetables per day">
+                        <label for="Veggies">
+                            <span class="label-icon">
+                                <i class="fas fa-leaf" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                Do you regularly consume vegetables?
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="toggle-group" role="radiogroup" aria-label="Vegetable consumption">
+                            <input type="radio" id="Veggies-yes" name="Veggies" value="1" required>
+                            <label for="Veggies-yes" class="toggle-option">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span>Yes</span>
+                            </label>
+                            <input type="radio" id="Veggies-no" name="Veggies" value="0">
+                            <label for="Veggies-no" class="toggle-option">
+                                <i class="fas fa-xmark" aria-hidden="true"></i>
+                                <span>No</span>
+                            </label>
+                        </div>
+                        <span class="field-error" id="Veggies-error" role="alert"></span>
+                    </div>
+
+                    <!-- HvyAlcoholConsump -->
+                    <div class="form-group" data-tooltip="Men: 14+ drinks/week, Women: 7+ drinks/week">
+                        <label for="HvyAlcoholConsump">
+                            <span class="label-icon">
+                                <i class="fas fa-wine-bottle" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                Heavy alcohol consumption?
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="toggle-group" role="radiogroup" aria-label="Alcohol consumption">
+                            <input type="radio" id="HvyAlcoholConsump-yes" name="HvyAlcoholConsump" value="1" required>
+                            <label for="HvyAlcoholConsump-yes" class="toggle-option">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span>Yes</span>
+                            </label>
+                            <input type="radio" id="HvyAlcoholConsump-no" name="HvyAlcoholConsump" value="0">
+                            <label for="HvyAlcoholConsump-no" class="toggle-option">
+                                <i class="fas fa-xmark" aria-hidden="true"></i>
+                                <span>No</span>
+                            </label>
+                        </div>
+                        <span class="field-error" id="HvyAlcoholConsump-error" role="alert"></span>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- ========================= -->
+            <!-- SECTION 3: HEALTHCARE -->
+            <!-- ========================= -->
+            <section class="form-section" data-section="3" aria-labelledby="section-3-title">
+
+                <div class="section-header">
+                    <div class="section-icon section-icon-3">
+                        <i class="fas fa-hospital" aria-hidden="true"></i>
+                    </div>
+                    <div class="section-title-wrap">
+                        <span class="section-eyebrow">Section 03</span>
+                        <h2 id="section-3-title">Healthcare Access</h2>
+                        <p class="section-desc">Your access to medical care and services</p>
+                    </div>
+                    <div class="section-number">03</div>
+                </div>
+
+                <div class="form-grid form-grid-2">
+
+                    <!-- AnyHealthcare -->
+                    <div class="form-group" data-tooltip="Any type of health insurance or coverage">
+                        <label for="AnyHealthcare">
+                            <span class="label-icon">
+                                <i class="fas fa-shield-heart" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                Do you have healthcare coverage?
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="toggle-group" role="radiogroup" aria-label="Healthcare coverage">
+                            <input type="radio" id="AnyHealthcare-yes" name="AnyHealthcare" value="1" required>
+                            <label for="AnyHealthcare-yes" class="toggle-option">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span>Yes</span>
+                            </label>
+                            <input type="radio" id="AnyHealthcare-no" name="AnyHealthcare" value="0">
+                            <label for="AnyHealthcare-no" class="toggle-option">
+                                <i class="fas fa-xmark" aria-hidden="true"></i>
+                                <span>No</span>
+                            </label>
+                        </div>
+                        <span class="field-error" id="AnyHealthcare-error" role="alert"></span>
+                    </div>
+
+                    <!-- NoDocbcCost -->
+                    <div class="form-group" data-tooltip="During the past 12 months, was cost a barrier?">
+                        <label for="NoDocbcCost">
+                            <span class="label-icon">
+                                <i class="fas fa-circle-dollar-to-slot" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                Avoided doctor visits because of cost?
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="toggle-group" role="radiogroup" aria-label="Cost barrier to healthcare">
+                            <input type="radio" id="NoDocbcCost-yes" name="NoDocbcCost" value="1" required>
+                            <label for="NoDocbcCost-yes" class="toggle-option">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span>Yes</span>
+                            </label>
+                            <input type="radio" id="NoDocbcCost-no" name="NoDocbcCost" value="0">
+                            <label for="NoDocbcCost-no" class="toggle-option">
+                                <i class="fas fa-xmark" aria-hidden="true"></i>
+                                <span>No</span>
+                            </label>
+                        </div>
+                        <span class="field-error" id="NoDocbcCost-error" role="alert"></span>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- ========================= -->
+            <!-- SECTION 4: GENERAL HEALTH -->
+            <!-- ========================= -->
+            <section class="form-section" data-section="4" aria-labelledby="section-4-title">
+
+                <div class="section-header">
+                    <div class="section-icon section-icon-4">
+                        <i class="fas fa-spa" aria-hidden="true"></i>
+                    </div>
+                    <div class="section-title-wrap">
+                        <span class="section-eyebrow">Section 04</span>
+                        <h2 id="section-4-title">General & Physical Health</h2>
+                        <p class="section-desc">Your overall health and wellness status</p>
+                    </div>
+                    <div class="section-number">04</div>
+                </div>
+
+                <div class="form-grid form-grid-3">
+
+                    <!-- GenHlth -->
+                    <div class="form-group" data-tooltip="Rate your health compared to others your age">
+                        <label for="GenHlth">
+                            <span class="label-icon">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                How would you rate your general health?
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="GenHlth" name="GenHlth" required>
+                                <option value="">Choose a rating</option>
+                                <option value="1">⭐⭐⭐⭐⭐ Excellent</option>
+                                <option value="2">⭐⭐⭐⭐ Very Good</option>
+                                <option value="3">⭐⭐⭐ Good</option>
+                                <option value="4">⭐⭐ Fair</option>
+                                <option value="5">⭐ Poor</option>
+                            </select>
+                            <i class="fas fa-chevron-down select-arrow" aria-hidden="true"></i>
+                        </div>
+                        <span class="field-error" id="GenHlth-error" role="alert"></span>
+                    </div>
+
+                    <!-- MentHlth -->
+                    <div class="form-group" data-tooltip="Days feeling depressed, anxious, or emotionally unstable">
+                        <label for="MentHlth">
+                            <span class="label-icon">
+                                <i class="fas fa-brain" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                Days mental health was not good (last 30 days)
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="input-wrapper">
+                            <input
+                                type="number"
+                                id="MentHlth"
+                                name="MentHlth"
+                                min="0"
+                                max="30"
+                                placeholder="0 – 30"
+                                required
+                                inputmode="numeric"
+                            >
+                            <span class="input-unit">days</span>
+                        </div>
+                        <span class="field-error" id="MentHlth-error" role="alert"></span>
+                    </div>
+
+                    <!-- PhysHlth -->
+                    <div class="form-group" data-tooltip="Days physical illness or injury affected you">
+                        <label for="PhysHlth">
+                            <span class="label-icon">
+                                <i class="fas fa-stethoscope" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                Days physical health was not good (last 30 days)
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="input-wrapper">
+                            <input
+                                type="number"
+                                id="PhysHlth"
+                                name="PhysHlth"
+                                min="0"
+                                max="30"
+                                placeholder="0 – 30"
+                                required
+                                inputmode="numeric"
+                            >
+                            <span class="input-unit">days</span>
+                        </div>
+                        <span class="field-error" id="PhysHlth-error" role="alert"></span>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- ========================= -->
+            <!-- SECTION 5: PERSONAL INFO -->
+            <!-- ========================= -->
+            <section class="form-section" data-section="5" aria-labelledby="section-5-title">
+
+                <div class="section-header">
+                    <div class="section-icon section-icon-5">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                    </div>
+                    <div class="section-title-wrap">
+                        <span class="section-eyebrow">Section 05</span>
+                        <h2 id="section-5-title">Personal Information</h2>
+                        <p class="section-desc">Demographic details for accurate assessment</p>
+                    </div>
+                    <div class="section-number">05</div>
+                </div>
+
+                <div class="form-grid form-grid-2">
+
+                    <!-- Sex -->
+                    <div class="form-group" data-tooltip="Biological sex affects diabetes risk factors">
+                        <label for="Sex">
+                            <span class="label-icon">
+                                <i class="fas fa-venus-mars" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                Sex
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="segmented-control" role="radiogroup" aria-label="Sex">
+                            <input type="radio" id="Sex-female" name="Sex" value="0" required>
+                            <label for="Sex-female" class="segment-option">
+                                <i class="fas fa-venus" aria-hidden="true"></i>
+                                <span>Female</span>
+                            </label>
+                            <input type="radio" id="Sex-male" name="Sex" value="1">
+                            <label for="Sex-male" class="segment-option">
+                                <i class="fas fa-mars" aria-hidden="true"></i>
+                                <span>Male</span>
+                            </label>
+                        </div>
+                        <span class="field-error" id="Sex-error" role="alert"></span>
+                    </div>
+
+                    <!-- Age -->
+                    <div class="form-group" data-tooltip="Age is one of the strongest diabetes predictors">
+                        <label for="Age">
+                            <span class="label-icon">
+                                <i class="fas fa-calendar-days" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                Age Group
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="Age" name="Age" required>
+                                <option value="">Choose your age group</option>
+                                <option value="1">18 – 24</option>
+                                <option value="2">25 – 29</option>
+                                <option value="3">30 – 34</option>
+                                <option value="4">35 – 39</option>
+                                <option value="5">40 – 44</option>
+                                <option value="6">45 – 49</option>
+                                <option value="7">50 – 54</option>
+                                <option value="8">55 – 59</option>
+                                <option value="9">60 – 64</option>
+                                <option value="10">65 – 69</option>
+                                <option value="11">70 – 74</option>
+                                <option value="12">75 – 79</option>
+                                <option value="13">80+</option>
+                            </select>
+                            <i class="fas fa-chevron-down select-arrow" aria-hidden="true"></i>
+                        </div>
+                        <span class="field-error" id="Age-error" role="alert"></span>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="form-group" data-tooltip="Education level correlates with health awareness">
+                        <label for="Education">
+                            <span class="label-icon">
+                                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                Education Level
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="Education" name="Education" required>
+                                <option value="">Choose education level</option>
+                                <option value="1">Never attended school</option>
+                                <option value="2">Elementary school</option>
+                                <option value="3">Some high school</option>
+                                <option value="4">High school graduate</option>
+                                <option value="5">Some college / technical school</option>
+                                <option value="6">College graduate</option>
+                            </select>
+                            <i class="fas fa-chevron-down select-arrow" aria-hidden="true"></i>
+                        </div>
+                        <span class="field-error" id="Education-error" role="alert"></span>
+                    </div>
+
+                    <!-- Income -->
+                    <div class="form-group" data-tooltip="Income affects access to healthy food and care">
+                        <label for="Income">
+                            <span class="label-icon">
+                                <i class="fas fa-money-bill-trend-up" aria-hidden="true"></i>
+                            </span>
+                            <span class="label-text">
+                                Income Level
+                                <span class="required-dot" aria-label="required">*</span>
+                            </span>
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="Income" name="Income" required>
+                                <option value="">Choose income level</option>
+                                <option value="1">Lowest</option>
+                                <option value="2">Low</option>
+                                <option value="3">Lower-middle</option>
+                                <option value="4">Middle</option>
+                                <option value="5">Upper-middle</option>
+                                <option value="6">High</option>
+                                <option value="7">Very high</option>
+                                <option value="8">Highest</option>
+                            </select>
+                            <i class="fas fa-chevron-down select-arrow" aria-hidden="true"></i>
+                        </div>
+                        <span class="field-error" id="Income-error" role="alert"></span>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- ========================= -->
+            <!-- SUBMIT SECTION -->
+            <!-- ========================= -->
+            <div class="submit-section">
+
+                <div class="submit-info">
+                    <i class="fas fa-circle-info" aria-hidden="true"></i>
+                    <span>All fields are required for an accurate assessment</span>
+                </div>
+
+                <button type="submit" id="predictButton" class="btn-primary">
+                    <span class="btn-content">
+                        <i class="fas fa-microscope btn-icon" aria-hidden="true"></i>
+                        <span class="btn-text">Analyze My Risk</span>
+                        <i class="fas fa-arrow-right btn-arrow" aria-hidden="true"></i>
+                    </span>
+                    <span class="btn-loader" aria-hidden="true">
+                        <span class="loader-dot"></span>
+                        <span class="loader-dot"></span>
+                        <span class="loader-dot"></span>
+                    </span>
+                    <span class="btn-shimmer" aria-hidden="true"></span>
+                </button>
+
+                <p class="submit-note">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    Your data is processed locally and never stored
+                </p>
+
+            </div>
+
+        </form>
+
+
+        <!-- ========================= -->
+        <!-- RESULT SECTION -->
+        <!-- ========================= -->
+        <section id="result" class="result-section" aria-live="polite" aria-atomic="true"></section>
+
+    </main>
+
+
+    <!-- ========================= -->
+    <!-- BACK TO TOP -->
+    <!-- ========================= -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" hidden>
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+    <footer class="site-footer" role="contentinfo" id="about">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <i class="fas fa-heartbeat" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <span class="footer-name">HealthPredictor</span>
+                    <span class="footer-tagline">AI-powered health insights</span>
+                </div>
+            </div>
+
+            <p class="footer-disclaimer">
+                <i class="fas fa-triangle-exclamation" aria-hidden="true"></i>
+                This tool provides risk estimates only and is not a medical diagnosis.
+                Always consult a qualified healthcare professional.
+            </p>
+
+            <div class="footer-meta">
+                <span>© 2025 HealthPredictor</span>
+                <span class="footer-dot" aria-hidden="true">•</span>
+                <span>Made with <i class="fas fa-heart" aria-hidden="true"></i> for better health</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ========================= -->
+    <!-- TOAST NOTIFICATIONS -->
+    <!-- ========================= -->
+    <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+
+    <script src="js/diabetes.js"></script>
+
+</body>
+</html>
